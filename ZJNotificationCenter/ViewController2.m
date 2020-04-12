@@ -1,32 +1,30 @@
 //
-//  ViewController.m
+//  ViewController2.m
 //  test-notification
 //
-//  Created by zhanjiang on 2020/4/10.
+//  Created by zhanjiang on 2020/4/11.
 //  Copyright © 2020 zhanjiang. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "ZJNotificationCenter.h"
 #import "ViewController2.h"
+#import "ZJNotificationCenter.h"
 
-@interface ViewController ()
+@interface ViewController2 ()
 
 @end
 
-@implementation ViewController
+@implementation ViewController2
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = [UIColor redColor];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(100, 100, 100, 100);
     btn.backgroundColor = [UIColor grayColor];
-    [btn setTitle:@"发通知" forState:UIControlStateNormal];
+    [btn setTitle:@"发通知2" forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(postNotification) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
-    
     
     ZJNotificationCenter *center = [ZJNotificationCenter defaultCenter];
     
@@ -76,22 +74,16 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [[ZJNotificationCenter defaultCenter] postNotificationName:@"name1" object:self];
-    
-    ViewController2 *vc = [ViewController2 new];
-    [self.navigationController pushViewController:vc animated:YES];
+    [[ZJNotificationCenter defaultCenter] postNotificationName:@"name1" object:nil];
 }
 
-- (void)testRemoveObserver {
-//    [[ZJNotificationCenter defaultCenter] removeObserver:self];
-//    [[ZJNotificationCenter defaultCenter] removeObserver:self name:@"name1" object:self];
-//    [[ZJNotificationCenter defaultCenter] removeObserver:self name:@"name1" object:nil];
-    [[ZJNotificationCenter defaultCenter] removeObserver:self name:nil object:self.view];
-    
+- (void)dealloc {
+    [[ZJNotificationCenter defaultCenter] removeObserver:self];
 }
+
 
 - (void)postNotification {
-    [[ZJNotificationCenter defaultCenter] postNotificationName:@"name1" object:nil];
+    [[ZJNotificationCenter defaultCenter] postNotificationName:@"name2" object:nil];
 }
 
 @end
