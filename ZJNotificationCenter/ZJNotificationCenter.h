@@ -1,9 +1,9 @@
 //
 //  ZJNotificationCenter.h
-//  test-notification
+//  ZJNotificationCenter
 //
-//  Created by zhanjiang on 2020/4/10.
-//  Copyright © 2020 zhanjiang. All rights reserved.
+//  Created by YZJ on 2020/4/10.
+//  Copyright © 2020 YZJ. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

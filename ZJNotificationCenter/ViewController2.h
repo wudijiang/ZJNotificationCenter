@@ -1,9 +1,9 @@
 //
 //  ViewController2.h
-//  test-notification
+//  ZJNotificationCenter
 //
-//  Created by zhanjiang on 2020/4/11.
-//  Copyright © 2020 zhanjiang. All rights reserved.
+//  Created by YZJ on 2020/4/11.
+//  Copyright © 2020 YZJ. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
